@@ -23,16 +23,17 @@ export default function scene1() {
 	const pathFolder = Workspace.Scene1.path;
 	const farmer = Workspace.Scene1.owner.HumanoidRootPart;
 	Workspace.WaitForChild("Scene1");
+	task.wait(5);
 	lockCamera(Workspace.Scene1.camera[1].CFrame);
 
 	rotate(farmer, 0, 180, 0).await();
 	walkingtrack.Play();
 
-	move(farmer, 10, { CFrame: pathFolder[1].CFrame }).await();
+	move(farmer, 8, { CFrame: pathFolder[1].CFrame }).await();
 
 	rotate(farmer, 0, -90, 0).await();
 
-	move(farmer, 10, { CFrame: pathFolder[2].CFrame }).await();
+	move(farmer, 9, { CFrame: pathFolder[2].CFrame }).await();
 
 	lockCamera(cameraFolder[2].CFrame);
 
