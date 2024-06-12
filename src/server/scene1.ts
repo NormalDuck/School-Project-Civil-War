@@ -1,3 +1,5 @@
+//!native
+//!optimize 2
 import { createMotion, tween } from "@rbxts/ripple";
 import { PathfindingService, RunService, TweenService, Workspace } from "@rbxts/services";
 import { lockCamera, moveCamera } from "./camera";
@@ -14,8 +16,9 @@ climb.AnimationId = "rbxassetid://17738228699";
 const climbingtrack = Workspace.Scene1.owner.Humanoid.Animator.LoadAnimation(climb);
 
 const whip = new Instance("Animation");
-whip.AnimationId = "rbxassetid://17738368353";
+whip.AnimationId = "rbxassetid://17824313186";
 const whippingtrack = Workspace.Scene1.owner.Humanoid.Animator.LoadAnimation(whip);
+whippingtrack.AdjustSpeed(0.5);
 
 export default function scene1() {
 	const maid = new Maid();
@@ -71,6 +74,8 @@ export default function scene1() {
 
 	whippingtrack.Play();
 	whippingtrack.Looped = true;
+
+	walkingtrack.Stop();
 
 	move(farmer, 20, { CFrame: pathFolder[8].CFrame });
 

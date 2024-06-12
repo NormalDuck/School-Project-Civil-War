@@ -24,4 +24,4 @@ for (const rig of CollectionService.GetTagged("test") as Rig[]) {
 
 init();
 disablestates();
-scene7();
+scene1();
